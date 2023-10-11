@@ -8,11 +8,11 @@ import plotly.express as px
 def select_data():
     try:
         # Crear una conexión a la base de datos
-        cnx = mysql.connector.connect(user='root', database='iot_sit_prob', password='Paudo777.11', host='localhost', port='3306')
+        cnx = mysql.connector.connect(user='sql10651033', database='sql10651033', password='Vy71iTQVAq', host='sql10.freemysqlhosting.net', port='3306')
         cursor = cnx.cursor()
 
         # Consultar la base de datos
-        query = ("SELECT * FROM dht_data")
+        query = ("SELECT * FROM dht_sensor_data")
 
         # Ejecutar la consulta
         cursor.execute(query)
@@ -51,10 +51,10 @@ def plot_data():
             df = pd.DataFrame(data, columns=['id', 'humidity', 'temperature', 'date_time'])
 
             # Crear una gráfica de línea con Plotly Express
-            fig = px.line(df, x='id', y=['humidity', 'temperature'], labels={'humidity': 'Humedad', 'temperature': 'Temperatura'})
+            fig = px.line(df, x='date_time', y=['humidity', 'temperature'], labels={'humidity': 'Humedad', 'temperature': 'Temperatura'})
             fig.update_layout(
                 title='Gráfica de Humedad y Temperatura',
-                xaxis_title='ID de Datos',
+                xaxis_title='Date Time',
                 yaxis_title='Valores'
             )
 

@@ -25,7 +25,7 @@ def select_data():
     """Selects all the data from the database"""
     try:
         # Create a connection to the database
-        cnx, cursor = createConnection('root', 'iot_sit_prob', 'Paudo777.11', 'localhost', '3306')
+        cnx, cursor = createConnection('sql10651033', 'sql10651033', 'Vy71iTQVAq', 'sql10.freemysqlhosting.net', '3306')
 
         # Query the database
         query = ("SELECT * FROM dht_data")
@@ -74,13 +74,13 @@ def insert_data():
         # Create a connection to the database
         # TODO: Call the createConnection() function and store the connection and cursor in variables. 
         # Dont forget to pass in the correct parameters LISTO
-        cnx, cursor = createConnection('root', 'iot_sit_prob', 'Paudo777.11', 'localhost', '3306')
+        cnx, cursor = createConnection('sql10651033', 'sql10651033', 'Vy71iTQVAq', 'sql10.freemysqlhosting.net', '3306')
         print("Connection ", cnx, "  Cursor ", cursor)
 
         # Insert the data into the database
         # TODO: Create the query string that inserts the data you created into the database LISTO
         # The query string should be an insert statement that inserts the data into the dht_sensor_data table
-        query = "INSERT INTO dht_data (humidity, temperature, date_time) VALUES (%s, %s, %s)"
+        query = "INSERT INTO dht_sensor_data (humidity, temperature, date_time) VALUES (%s, %s, %s)"
 
 
 
